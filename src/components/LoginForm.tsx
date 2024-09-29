@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useTransition } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,9 +18,13 @@ import { UserLoginFormData, userLoginFormSchema } from "@/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { actionLogin } from "@/lib";
 import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 export function LoginForm() {
   const { toast } = useToast();
+  const router = useRouter();
+
+  const [isPending, startTransition] = useTransition();
 
   const { control, handleSubmit } = useForm<UserLoginFormData>({
     resolver: zodResolver(userLoginFormSchema),
@@ -37,6 +41,7 @@ export function LoginForm() {
         const res = await actionLogin(data);
         if (res?.success) {
           toast({ title: "Success", description: res.message });
+          startTransition(() => router.push("/dashboard"));
         } else if (!res?.success) {
           throw new Error(res?.message);
         }
@@ -51,7 +56,7 @@ export function LoginForm() {
           });
       }
     },
-    [toast]
+    [router, toast]
   );
 
   return (
@@ -60,7 +65,7 @@ export function LoginForm() {
         <CardTitle className="text-xl">Welcome to my Next.js app!</CardTitle>
         <CardDescription>Sign in to continue.</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="text-left">
         <form id="loginForm" onSubmit={handleSubmit(onSubmit)}>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
