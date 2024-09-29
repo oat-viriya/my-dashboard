@@ -24,6 +24,7 @@ export function LoginForm() {
   const { toast } = useToast();
   const router = useRouter();
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isPending, startTransition] = useTransition();
 
   const { control, handleSubmit } = useForm<UserLoginFormData>({
@@ -62,7 +63,7 @@ export function LoginForm() {
   return (
     <Card className="max-sm:w-5/6 w-[350px]">
       <CardHeader>
-        <CardTitle className="text-xl">Welcome to my Next.js app!</CardTitle>
+        <CardTitle className="text-xl">Welcome to my dashboard app!</CardTitle>
         <CardDescription>Sign in to continue.</CardDescription>
       </CardHeader>
       <CardContent className="text-left">

@@ -7,7 +7,7 @@ export type UserData = {
   registered: string;
 };
 
-export const mockEntries: UserData[] = [
+export const mockUserData: UserData[] = [
   {
     id: 1,
     user: "John Doe",

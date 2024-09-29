@@ -104,7 +104,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div>
+    <div className="md:overflow-hidden overflow-scroll">
       <div className="rounded-md border">
         <Table>
           <TableHeader>

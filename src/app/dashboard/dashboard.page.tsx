@@ -1,8 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { UserData } from "@/data";
 import { columns, DataTable } from "@/components";
+import { DataTableSkeleton } from "@/components";
+import { Oval } from "react-loader-spinner";
 
 interface DashboardPageProps {
   userData: UserData[];
@@ -34,7 +36,9 @@ export default function DashboardPage(props: DashboardPageProps) {
         className="mb-4 p-2 border border-gray-300 rounded"
       />
       <section className="grid gap-6 h-full">
-        <DataTable columns={columns} data={tableData} />
+        <Suspense fallback={<DataTableSkeleton />}>
+          <DataTable columns={columns} data={tableData} />
+        </Suspense>
       </section>
     </div>
   );
