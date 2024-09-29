@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { UserData } from "@/data";
 import { columns, DataTable } from "@/components";
 import { DataTableSkeleton } from "@/components";
-import { Oval } from "react-loader-spinner";
 
 interface DashboardPageProps {
   userData: UserData[];
