@@ -26,18 +26,18 @@ After PNPM is installed, follow these steps:
 1. **Install Dependencies**:
    Navigate to the project root and run the following command to install the necessary dependencies:
 
-   \`\`\`bash
+   ```bash
    pnpm install
-   \`\`\`
+   ```
 
 2. **Environment Variables**:
    Configure your local environment variables by creating a `.env` file based on the provided `.env.example`. Set the following:
    - `USERNAME`: Your desired username for login.
    - `PASSWORD`: Your desired password for login.
    - `AUTH_SECRET_KEY`: A secret key for authentication, which can be generated using the following command:
-     \`\`\`bash
+     ```bash
      openssl rand -base64 32
-     \`\`\`
+     ```
 
 ## Pages Overview
 
@@ -63,9 +63,9 @@ To run the project locally:
 1. **Start the Development Server**:
    Use the following command to start the development server:
 
-   \`\`\`bash
+   ```bash
    pnpm dev
-   \`\`\`
+   ```
 
 2. **View in Browser**:
    Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
