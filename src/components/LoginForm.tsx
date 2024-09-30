@@ -2,7 +2,7 @@
 
 import { useCallback, useTransition } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import {
   Card,
   CardContent,
@@ -10,9 +10,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@/components/ui/Card";
+import { Input } from "@/components/ui/Input";
+import { Label } from "@/components/ui/Label";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { UserLoginFormData, userLoginFormSchema } from "@/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";

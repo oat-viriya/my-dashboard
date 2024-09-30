@@ -24,6 +24,12 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       },
     }),
   ],
+  callbacks: {
+    authorized: async ({ auth }) => {
+      // Logged in users are authenticated, otherwise redirect to login page
+      return !!auth;
+    },
+  },
   session: {
     strategy: "jwt",
     maxAge: 1 * 24 * 60 * 60, // 1 day,

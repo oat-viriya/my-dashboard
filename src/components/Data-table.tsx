@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { UserData } from "@/data";
@@ -9,6 +10,7 @@ import {
   useReactTable,
   getSortedRowModel,
   getPaginationRowModel,
+  CellContext,
 } from "@tanstack/react-table";
 import { useState } from "react";
 import { ArrowUpDown } from "lucide-react";
@@ -19,8 +21,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Button } from "./ui/button";
+} from "@/components/ui/Table";
+import { Button } from "./ui/Button";
 
 export const columns: ColumnDef<UserData>[] = [
   {
@@ -37,6 +39,11 @@ export const columns: ColumnDef<UserData>[] = [
         </Button>
       );
     },
+    cell: (row: CellContext<UserData, any>) => (
+      <div className="flex items-center justify-start ml-4">
+        {row?.getValue()}
+      </div>
+    ),
     size: 5,
   },
   {
@@ -60,6 +67,11 @@ export const columns: ColumnDef<UserData>[] = [
         </Button>
       );
     },
+    cell: (row: CellContext<UserData, any>) => (
+      <div className="flex items-center justify-start ml-4">
+        {row?.getValue()}
+      </div>
+    ),
   },
   {
     accessorKey: "status",
@@ -74,6 +86,11 @@ export const columns: ColumnDef<UserData>[] = [
         </Button>
       );
     },
+    cell: (row: CellContext<UserData, any>) => (
+      <div className="flex items-center justify-start ml-4">
+        {row?.getValue()}
+      </div>
+    ),
   },
   {
     accessorKey: "registered",

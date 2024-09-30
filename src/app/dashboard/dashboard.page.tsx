@@ -1,6 +1,6 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/Input";
 import { UserData } from "@/data";
 import { columns, DataTable } from "@/components";
 import { DataTableSkeleton } from "@/components";

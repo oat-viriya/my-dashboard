@@ -5,7 +5,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "@/components/ui/Table";
 
 export function DataTableSkeleton() {
   const skeletonRows = Array.from({ length: 5 }, (_, index) => index); // Adjust the number of rows as needed

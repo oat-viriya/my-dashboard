@@ -1,3 +1,5 @@
+import { SideNav } from "@/components";
+
 export default function DashboardLayout({
   children,
 }: {
@@ -5,7 +7,12 @@ export default function DashboardLayout({
 }) {
   return (
     <main className="flex h-screen flex-col overflow-scroll md:flex-row md:overflow-hidden">
-      {children}
+      <div className="w-full flex-none border border-gray-200 md:w-64">
+        <SideNav />
+      </div>
+      <div className="flex-grow p-6 md:overflow-y-auto  md:p-12">
+        {children}
+      </div>
     </main>
   );
 }
