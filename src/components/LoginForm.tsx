@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useTransition } from "react";
-
 import { Button } from "@/components/ui/Button";
 import {
   Card,
@@ -27,7 +26,11 @@ export function LoginForm() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isPending, startTransition] = useTransition();
 
-  const { control, handleSubmit } = useForm<UserLoginFormData>({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<UserLoginFormData>({
     resolver: zodResolver(userLoginFormSchema),
     defaultValues: {
       username: "",
@@ -52,7 +55,7 @@ export function LoginForm() {
         if (error instanceof Error)
           toast({
             title: "Error",
-            description: error.message as unknown as string,
+            description: error.message,
             variant: "destructive",
           });
       }
@@ -69,6 +72,7 @@ export function LoginForm() {
       <CardContent className="text-left">
         <form id="loginForm" onSubmit={handleSubmit(onSubmit)}>
           <div className="grid w-full items-center gap-4">
+            {/* Username Field */}
             <div className="flex flex-col space-y-1.5">
               <Controller
                 name="username"
@@ -77,10 +81,17 @@ export function LoginForm() {
                   <>
                     <Label htmlFor="username">Username</Label>
                     <Input {...field} id="username" placeholder="John" />
+                    {errors.username && (
+                      <p className="text-red-500 text-sm">
+                        {errors.username.message}
+                      </p>
+                    )}
                   </>
                 )}
               />
             </div>
+
+            {/* Password Field */}
             <div className="flex flex-col space-y-1.5">
               <Controller
                 name="password"
@@ -89,6 +100,11 @@ export function LoginForm() {
                   <>
                     <Label htmlFor="password">Password</Label>
                     <Input {...field} id="password" type="password" />
+                    {errors.password && (
+                      <p className="text-red-500 text-sm">
+                        {errors.password.message}
+                      </p>
+                    )}
                   </>
                 )}
               />

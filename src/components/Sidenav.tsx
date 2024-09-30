@@ -20,6 +20,7 @@ export function SideNav() {
   const router = useRouter();
   const pathname = usePathname();
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isPending, startTransition] = useTransition();
 
   const handleLogout = useCallback(async () => {
