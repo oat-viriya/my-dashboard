@@ -10,10 +10,14 @@ export default async function DashboardSSRPage() {
   if (!session) redirect(ROUTES.HOME);
 
   return (
-    <div className="w-full h-full ">
-      <h1 className="mb-4 font-bold text-2xl md:text-4xl">Dashboard</h1>
-      <p className="mb-4">Welcome to user dashboard!</p>
-      <DashboardPage userData={mockUserData} />
+    <div className="w-full h-full">
+      <div>
+        <h1 className="mb-2 font-bold text-3xl md:text-4xl text-gray-800">
+          Dashboard
+        </h1>
+        <p className="mb-6 text-gray-600">Welcome to your user dashboard!</p>
+        <DashboardPage userData={mockUserData} />
+      </div>
     </div>
   );
 }

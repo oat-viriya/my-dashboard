@@ -1,13 +1,6 @@
-export type UserData = {
-  id: number;
-  user: string;
-  email: string;
-  role: string;
-  status: string;
-  registered: string;
-};
+export type UserData = (typeof mockUserData)[number];
 
-export const mockUserData: UserData[] = [
+export const mockUserData = [
   {
     id: 1,
     user: "John Doe",
@@ -15,6 +8,12 @@ export const mockUserData: UserData[] = [
     role: "Admin",
     status: "Active",
     registered: "2021-01-01",
+    country: "USA",
+    addresses: [
+      { type: "home", address: "123 Main St, Springfield, IL" },
+      { type: "work", address: "456 Corporate Dr, Springfield, IL" },
+    ],
+    nationality: "American",
   },
   {
     id: 2,
@@ -23,6 +22,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Inactive",
     registered: "2021-02-15",
+    country: "Canada",
+    addresses: [{ type: "home", address: "789 Maple St, Toronto, ON" }],
+    nationality: "Canadian",
   },
   {
     id: 3,
@@ -31,6 +33,9 @@ export const mockUserData: UserData[] = [
     role: "Moderator",
     status: "Active",
     registered: "2021-03-10",
+    country: "UK",
+    addresses: [{ type: "home", address: "101 High St, London" }],
+    nationality: "British",
   },
   {
     id: 4,
@@ -39,6 +44,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2021-04-22",
+    country: "Australia",
+    addresses: [{ type: "home", address: "202 King St, Sydney" }],
+    nationality: "Australian",
   },
   {
     id: 5,
@@ -47,6 +55,9 @@ export const mockUserData: UserData[] = [
     role: "Admin",
     status: "Inactive",
     registered: "2021-05-30",
+    country: "USA",
+    addresses: [{ type: "home", address: "303 Elm St, Springfield, IL" }],
+    nationality: "American",
   },
   {
     id: 6,
@@ -55,6 +66,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2021-06-18",
+    country: "Canada",
+    addresses: [{ type: "home", address: "404 Pine St, Toronto, ON" }],
+    nationality: "Canadian",
   },
   {
     id: 7,
@@ -63,6 +77,9 @@ export const mockUserData: UserData[] = [
     role: "Moderator",
     status: "Inactive",
     registered: "2021-07-25",
+    country: "UK",
+    addresses: [{ type: "home", address: "505 Oak St, London" }],
+    nationality: "British",
   },
   {
     id: 8,
@@ -71,6 +88,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2021-08-14",
+    country: "Australia",
+    addresses: [{ type: "home", address: "606 Cedar St, Sydney" }],
+    nationality: "Australian",
   },
   {
     id: 9,
@@ -79,6 +99,9 @@ export const mockUserData: UserData[] = [
     role: "Admin",
     status: "Active",
     registered: "2021-09-05",
+    country: "USA",
+    addresses: [{ type: "home", address: "707 Birch St, Springfield, IL" }],
+    nationality: "American",
   },
   {
     id: 10,
@@ -87,6 +110,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Inactive",
     registered: "2021-10-20",
+    country: "Canada",
+    addresses: [{ type: "home", address: "808 Maple St, Toronto, ON" }],
+    nationality: "Canadian",
   },
   {
     id: 11,
@@ -95,6 +121,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2021-11-01",
+    country: "UK",
+    addresses: [{ type: "home", address: "909 High St, London" }],
+    nationality: "British",
   },
   {
     id: 12,
@@ -103,6 +132,9 @@ export const mockUserData: UserData[] = [
     role: "Admin",
     status: "Inactive",
     registered: "2021-11-15",
+    country: "Australia",
+    addresses: [{ type: "home", address: "1010 King St, Sydney" }],
+    nationality: "Australian",
   },
   {
     id: 13,
@@ -111,6 +143,9 @@ export const mockUserData: UserData[] = [
     role: "Moderator",
     status: "Active",
     registered: "2021-12-10",
+    country: "USA",
+    addresses: [{ type: "home", address: "1111 Elm St, Springfield, IL" }],
+    nationality: "American",
   },
   {
     id: 14,
@@ -119,6 +154,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2022-01-05",
+    country: "Canada",
+    addresses: [{ type: "home", address: "1212 Pine St, Toronto, ON" }],
+    nationality: "Canadian",
   },
   {
     id: 15,
@@ -127,6 +165,9 @@ export const mockUserData: UserData[] = [
     role: "Admin",
     status: "Inactive",
     registered: "2022-02-20",
+    country: "UK",
+    addresses: [{ type: "home", address: "1313 Oak St, London" }],
+    nationality: "British",
   },
   {
     id: 16,
@@ -135,6 +176,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2022-03-15",
+    country: "Australia",
+    addresses: [{ type: "home", address: "1414 Cedar St, Sydney" }],
+    nationality: "Australian",
   },
   {
     id: 17,
@@ -143,6 +187,9 @@ export const mockUserData: UserData[] = [
     role: "Moderator",
     status: "Inactive",
     registered: "2022-04-10",
+    country: "USA",
+    addresses: [{ type: "home", address: "1515 Birch St, Springfield, IL" }],
+    nationality: "American",
   },
   {
     id: 18,
@@ -151,6 +198,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2022-05-25",
+    country: "Canada",
+    addresses: [{ type: "home", address: "1616 Maple St, Toronto, ON" }],
+    nationality: "Canadian",
   },
   {
     id: 19,
@@ -159,6 +209,9 @@ export const mockUserData: UserData[] = [
     role: "Admin",
     status: "Active",
     registered: "2022-06-14",
+    country: "UK",
+    addresses: [{ type: "home", address: "1717 High St, London" }],
+    nationality: "British",
   },
   {
     id: 20,
@@ -167,6 +220,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Inactive",
     registered: "2022-07-30",
+    country: "Australia",
+    addresses: [{ type: "home", address: "1818 King St, Sydney" }],
+    nationality: "Australian",
   },
   {
     id: 21,
@@ -175,6 +231,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2022-08-18",
+    country: "USA",
+    addresses: [{ type: "home", address: "1919 Elm St, Springfield, IL" }],
+    nationality: "American",
   },
   {
     id: 22,
@@ -183,6 +242,9 @@ export const mockUserData: UserData[] = [
     role: "Moderator",
     status: "Inactive",
     registered: "2022-09-05",
+    country: "Canada",
+    addresses: [{ type: "home", address: "2020 Pine St, Toronto, ON" }],
+    nationality: "Canadian",
   },
   {
     id: 23,
@@ -191,6 +253,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2022-10-22",
+    country: "UK",
+    addresses: [{ type: "home", address: "2121 Oak St, London" }],
+    nationality: "British",
   },
   {
     id: 24,
@@ -199,6 +264,9 @@ export const mockUserData: UserData[] = [
     role: "Admin",
     status: "Inactive",
     registered: "2022-11-11",
+    country: "Australia",
+    addresses: [{ type: "home", address: "2222 Cedar St, Sydney" }],
+    nationality: "Australian",
   },
   {
     id: 25,
@@ -207,6 +275,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2022-12-01",
+    country: "USA",
+    addresses: [{ type: "home", address: "2323 Birch St, Springfield, IL" }],
+    nationality: "American",
   },
   {
     id: 26,
@@ -215,6 +286,9 @@ export const mockUserData: UserData[] = [
     role: "Moderator",
     status: "Inactive",
     registered: "2023-01-15",
+    country: "Canada",
+    addresses: [{ type: "home", address: "2424 Maple St, Toronto, ON" }],
+    nationality: "Canadian",
   },
   {
     id: 27,
@@ -223,6 +297,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2023-02-28",
+    country: "UK",
+    addresses: [{ type: "home", address: "2525 High St, London" }],
+    nationality: "British",
   },
   {
     id: 28,
@@ -231,6 +308,9 @@ export const mockUserData: UserData[] = [
     role: "Admin",
     status: "Active",
     registered: "2023-03-20",
+    country: "Australia",
+    addresses: [{ type: "home", address: "2626 King St, Sydney" }],
+    nationality: "Australian",
   },
   {
     id: 29,
@@ -239,6 +319,9 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Inactive",
     registered: "2023-04-10",
+    country: "USA",
+    addresses: [{ type: "home", address: "2727 Elm St, Springfield, IL" }],
+    nationality: "American",
   },
   {
     id: 30,
@@ -247,5 +330,8 @@ export const mockUserData: UserData[] = [
     role: "User",
     status: "Active",
     registered: "2023-05-05",
+    country: "Canada",
+    addresses: [{ type: "home", address: "2828 Pine St, Toronto, ON" }],
+    nationality: "Canadian",
   },
 ];
